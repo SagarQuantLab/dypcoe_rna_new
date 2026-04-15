@@ -1,0 +1,61 @@
+# Basic example
+Bank
+ ├── open_account()
+ ├── delete_account()
+ └── accounts{}  A/c_number : {Name, age, gender, dob, account_type, balance}
+
+Account
+ ├── deposit()
+ ├── withdraw()
+ ├── check_balance()
+
+SavingsAccount(Account)
+ └── add_interest()
+
+CurrentAccount(Account)
+ └── transaction_limit_check()
+
+
+# Advance example
+
+ Bank
+ ├── open_account()
+ ├── delete_account()
+ ├── #find_account()
+ ├── #transfer_money()
+ ├── #show_all_accounts()
+ └── accounts{}
+
+Account (Base Class)
+ ├── deposit()
+ ├── withdraw()
+ ├── check_balance()
+ └── get_account_details()
+
+SavingsAccount(Account)
+ ├── add_interest()
+ └── minimum_balance_check()
+
+CurrentAccount(Account)
+ ├── transaction_limit_check()
+ └── overdraft_facility()
+
+FixedDepositAccount(Account)
+ ├── calculate_maturity()
+ └── premature_withdraw_penalty()
+
+LoanAccount(Account)
+ ├── calculate_emi()
+ ├── pay_emi()
+ └── outstanding_loan()
+
+Transaction
+ ├── amount
+ ├── type
+ ├── timestamp
+ └── status
+
+Customer
+ ├── update_profile()
+ ├── get_age()
+ └── validate_kyc()
